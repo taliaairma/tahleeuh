@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Polar DB — Talia Zhuang</title>
+    <meta
+      name="description"
+      content="Polar DB case study: a responsive React movie discovery app built with the TMDB API."
+    />
+
+    <link rel="canonical" href="https://tahleeuh.com/projects/polar-db.html" />
+
+    <!-- Icons -->
+    <link rel="icon" href="../assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/icons/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png" />
+    <meta
+      name="theme-color"
+      content="#fff8f1"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#171214"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!-- Link previews (LinkedIn, Slack, iMessage, etc.) -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Talia Zhuang — Designer &amp; Developer" />
+    <meta property="og:title" content="Polar DB — Talia Zhuang" />
+    <meta
+      property="og:description"
+      content="Polar DB case study: a responsive React movie discovery app built with the TMDB API."
+    />
+    <meta
+      property="og:url"
+      content="https://tahleeuh.com/projects/polar-db.html"
+    />
+    <meta
+      property="og:image"
+      content="https://tahleeuh.com/assets/og/polar-db.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Polar DB wordmark over a teal and purple aurora"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Breadcrumb trail for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tahleeuh.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://tahleeuh.com/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Polar DB",
+            "item": "https://tahleeuh.com/projects/polar-db.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Set the theme before paint so there's no flash of the wrong mode -->
+    <script>
+      (function () {
+        var saved = null;
+        try {
+          saved = localStorage.getItem("theme");
+        } catch (e) {}
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts load without blocking the first paint; text shows in a fallback font until they arrive -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"></noscript>
+    <link rel="stylesheet" href="../css/styles.css?v=4" />
+  </head>
+  <body>
+    <!--
+    PROJECT PAGE TEMPLATE
+    To make a page for another project: copy this file (e.g. projects/snooze-n-snacks.html),
+    swap the text, facts and images (put images in assets/projects/<project-name>/),
+    then add a "Case study" link to that project's card in index.html.
+  -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <a class="nav__logo" href="../index.html"
+          >talia<span aria-hidden="true">.</span></a
+        >
+        <ul class="nav__links">
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch to dark mode"
+        >
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ============ THUMB NAV (phones only) ============ -->
+    <nav class="thumb-nav" aria-label="Sections">
+      <ul>
+        <li>
+          <a href="../index.html#projects" aria-current="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="3.5" width="7" height="7" rx="2" />
+              <rect x="13.5" y="3.5" width="7" height="7" rx="2" />
+              <rect x="3.5" y="13.5" width="7" height="7" rx="2" />
+              <rect x="13.5" y="13.5" width="7" height="7" rx="2" />
+            </svg>
+            <span>Work</span></a
+          >
+        </li>
+        <li>
+          <a href="../index.html#skills">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2Z"
+              />
+            </svg>
+            <span>Skills</span></a
+          >
+        </li>
+        <li>
+          <a href="../index.html#about">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8.5" r="4" />
+              <path d="M4.5 20.5c1.2-3.9 4.1-6 7.5-6s6.3 2.1 7.5 6" />
+            </svg>
+            <span>About</span></a
+          >
+        </li>
+        <li>
+          <a href="#contact">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5.5" width="18" height="13" rx="3" />
+              <path d="m4 7.5 8 6 8-6" />
+            </svg>
+            <span>Contact</span></a
+          >
+        </li>
+        <li>
+          <button
+            type="button"
+            class="thumb-nav__theme"
+            data-theme-toggle
+            aria-label="Switch to dark mode"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.5" />
+              <path
+                d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"
+              />
+            </svg>
+            <span class="thumb-nav__theme-text" aria-hidden="true">Dark</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="main">
+      <article class="case" style="--tint: var(--lilac)">
+        <!-- ============ INTRO ============ -->
+        <header class="case__hero" id="top">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html#projects">Projects</a></li>
+              <li><span aria-current="page">Polar DB</span></li>
+            </ol>
+          </nav>
+          <p class="section__kicker">Team Project · React Web App</p>
+          <h1 class="case__title">Polar DB</h1>
+          <p class="case__lede">
+            A fully responsive movie discovery app, inspired by the northern
+            lights and powered by The Movie Database (TMDB) API.
+          </p>
+
+          <div class="case__actions">
+            <a
+              class="btn btn--primary"
+              href="https://tahleeuh.com/polar-db"
+              target="_blank"
+              rel="noopener"
+              >Visit live site <span aria-hidden="true">↗</span
+              ><span class="visually-hidden"> (opens in a new tab)</span></a
+            >
+            <a
+              class="btn btn--ghost"
+              href="https://github.com/francescalulo/polar-db"
+              target="_blank"
+              rel="noopener"
+              >View on GitHub <span aria-hidden="true">↗</span
+              ><span class="visually-hidden"> (opens in a new tab)</span></a
+            >
+          </div>
+
+          <dl class="case__facts">
+            <div>
+              <dt>Course</dt>
+              <dd>Web Scripting 3 (FWDP 3400)</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>Talia, Sara &amp; Frances</dd>
+            </div>
+            <div>
+              <dt>My role</dt>
+              <dd>API layer, About page, 404 page, project setup</dd>
+            </div>
+            <div>
+              <dt>Built with</dt>
+              <dd>React, Vite, React Router, Sass, TMDB API</dd>
+            </div>
+          </dl>
+        </header>
+
+        <figure class="case__shot case__shot--wide reveal">
+          <div class="browser">
+            <div class="browser__bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <img
+              src="../assets/projects/polar-db/home.webp"
+              alt="Polar DB home page: a full-width movie backdrop with a featured film card, rating and an Add to My Watchlist button"
+              width="1440"
+              height="900"
+            />
+          </div>
+          <figcaption>
+            The home page opens on a carousel of top movies.
+          </figcaption>
+        </figure>
+
+        <!-- ============ OVERVIEW ============ -->
+        <section class="case__section reveal" aria-labelledby="overview-title">
+          <h2 class="case__h2" id="overview-title">Overview</h2>
+          <div class="case__body">
+            <p>
+              Polar DB helps people find their next film. Users can browse
+              popular, upcoming, now-playing and top-rated movies, search by
+              title or genre, open a full movie page with cast, trailer, rating
+              and certification, and save favourites to a personal watchlist
+              that's kept in their browser.
+            </p>
+            <p>
+              We built it as a team of three for Web Scripting 3, following a
+              brief that called for mobile-first responsive design from 320px to
+              1980px, accessible colour contrast, and a clean Git workflow with
+              branches and pull requests.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ MY ROLE ============ -->
+        <section class="case__section reveal" aria-labelledby="role-title">
+          <h2 class="case__h2" id="role-title">What I built</h2>
+          <div class="case__body">
+            <ul class="case__list">
+              <li>
+                <strong>Project setup:</strong> the original repo scaffold and
+                npm setup the team built on.
+              </li>
+              <li>
+                <strong>The TMDB API layer:</strong> a shared fetch client and
+                service functions every page uses to get movie data.
+              </li>
+              <li>
+                <strong>The About page:</strong> the app's story plus the
+                required TMDB attribution.
+              </li>
+              <li>
+                <strong>Movie detail wiring:</strong> connected the individual
+                movie page to its API endpoint.
+              </li>
+              <li>
+                <strong>The 404 page:</strong> a "Page not found" screen and the
+                fallback route that catches any unknown URL.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="case__pair reveal">
+          <figure class="case__shot">
+            <div class="browser">
+              <div class="browser__bar" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <img
+                src="../assets/projects/polar-db/about.webp"
+                alt="Polar DB About page describing the app, with sections for movie data, watchlists, search and TMDB attribution"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>The About page I built.</figcaption>
+          </figure>
+          <figure class="case__shot">
+            <div class="browser">
+              <div class="browser__bar" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <img
+                src="../assets/projects/polar-db/not-found.webp"
+                alt="Polar DB 404 page reading: Page not found. This page drifted into the northern sky. With a Go back home button"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              The 404 page: "This page drifted into the northern sky."
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- ============ FEATURES ============ -->
+        <section class="case__section reveal" aria-labelledby="pages-title">
+          <h2 class="case__h2" id="pages-title">Inside the app</h2>
+          <div class="case__body">
+            <ul class="case__cards">
+              <li>
+                <h3>Home</h3>
+                <p>
+                  A hero carousel of top movies and tabs for Popular, Upcoming,
+                  Now Playing and Top Rated, loading 12 at a time.
+                </p>
+              </li>
+              <li>
+                <h3>Movie page</h3>
+                <p>
+                  Poster, backdrop, runtime, certification, rating, genres,
+                  director, cast and trailer.
+                </p>
+              </li>
+              <li>
+                <h3>Search</h3>
+                <p>
+                  Search by title or genre with live suggestions, plus sort and
+                  year filters.
+                </p>
+              </li>
+              <li>
+                <h3>My Watchlist</h3>
+                <p>
+                  Saved favourites kept in the browser, with a friendly empty
+                  state.
+                </p>
+              </li>
+              <li>
+                <h3>About</h3>
+                <p>
+                  What Polar DB is, plus the TMDB attribution the API requires.
+                </p>
+              </li>
+              <li>
+                <h3>404</h3>
+                <p>A themed fallback for any page that doesn't exist.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ============ TEAM ============ -->
+        <section class="case__section reveal" aria-labelledby="team-title">
+          <h2 class="case__h2" id="team-title">How we worked</h2>
+          <div class="case__body">
+            <p>
+              We split the app by feature and worked in branches, merging
+              through pull requests on GitHub. The API key was kept out of the
+              repo entirely.
+            </p>
+            <ul class="case__list">
+              <li>
+                <strong>Sara</strong> built the watchlist page, favouriting and
+                the cast UI.
+              </li>
+              <li>
+                <strong>Frances</strong> led the design system, header, footer
+                and routing, the home page, search and accessibility polish.
+              </li>
+              <li>
+                <strong>I</strong> set up the project, built the API layer, the
+                About and 404 pages, and wired up the movie detail endpoint.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="case__pair case__pair--phone reveal">
+          <figure class="case__shot case__shot--phone">
+            <img
+              src="../assets/projects/polar-db/home-mobile.webp"
+              alt="Polar DB home page on a phone, with the featured movie card and carousel below the backdrop"
+              width="500"
+              height="1000"
+              loading="lazy"
+            />
+            <figcaption>Mobile-first, from 320px up.</figcaption>
+          </figure>
+          <!-- ============ REFLECTION ============ -->
+          <section
+            class="case__section case__section--inline"
+            aria-labelledby="learned-title"
+          >
+            <h2 class="case__h2" id="learned-title">What I learned</h2>
+            <div class="case__body">
+              <p>
+                Much of my work on Polar DB was the groundwork that my teammates
+                built upon. Scaffolding the project and setting up npm early
+                meant everyone started from the same structure and dependencies.
+                In a team, a messy starting point turns into merge conflicts and
+                "works on my machine" problems for everyone, so getting it right
+                the first time mattered.
+              </p>
+
+              <p>
+                Building the shared TMDB fetch client taught me why you keep API
+                logic in one place. I didn't want each component writing its
+                own <code>fetch</code> call. I wrote one client that handles the
+                base URL, the API key and responses, and put service functions
+                on top of it. Components then asked for data by intent, like
+                "get movie details," without dealing with request details. Our
+                instructor pointed out that keeping API URLs, image paths,
+                local-storage keys and shared settings in a separate file, with
+                fetch helpers kept out of the components, made the project
+                easier to maintain. I now see that as a design decision, not
+                just tidiness. When the Movie Detail page needed its data,
+                wiring it up was simple because the service layer already
+                existed.
+              </p>
+
+              <p>
+                The 404 page and wildcard route were small tasks, but they made
+                me think about the parts of an app that users only see when
+                something goes wrong. A bad URL should land on a page that fits
+                the app's design and helps the user get back, not on a blank
+                screen.
+              </p>
+
+              <p>
+                As a team, we kept the API key and <code>.env</code> out of the
+                repo, kept <code>node_modules</code> ignored, used multiple
+                branches with pull requests, and kept <code>main</code> matching
+                our submission. Those habits are what let three people work in
+                one codebase without stepping on each other.
+              </p>
+
+              <p>
+                <strong>What I'd do differently:</strong> The feedback gave me
+                three concrete habits for future projects:
+              </p>
+              <ul class="case__list">
+                <li>
+                  Write media queries in <code>em</code> rather than
+                  <code>rem</code>, because <code>em</code> responds better to
+                  user font-size settings.
+                </li>
+                <li>
+                  Set a solid fallback background color behind gradients and
+                  images, for accessibility and for older devices.
+                </li>
+                <li>
+                  Watch image sizes even when an external API hosts the images,
+                  because oversized images still hurt render performance.
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <!-- ============ NEXT ============ -->
+        <nav class="case__next" aria-label="More projects">
+          <a class="case__next-link" href="snooze-n-snacks.html"
+            ><span>Next project</span>Snooze &amp; Snacks
+            <span aria-hidden="true">→</span></a
+          >
+          <a class="btn btn--primary btn--cta" href="../index.html#projects"
+            >See all projects <span aria-hidden="true">→</span></a
+          >
+        </nav>
+      </article>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" id="contact">
+      <div class="footer__inner">
+        <div class="footer__lead">
+          <p class="footer__big">Let's make something <em>lovely</em>.</p>
+          <a class="footer__email" href="mailto:talia.irma_@live.com"
+            >talia.irma_@live.com</a
+          >
+        </div>
+
+        <div class="footer__cols">
+          <div>
+            <h2 class="footer__label">Contact</h2>
+            <ul>
+              <li><a href="mailto:talia.irma_@live.com">Email</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="footer__label">Elsewhere</h2>
+            <ul class="socials">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/talia-lhi-zhuang/"
+                  target="_blank"
+                  rel="me noopener"
+                  >LinkedIn<span class="visually-hidden">
+                    (opens in a new tab)</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/taliaairma"
+                  target="_blank"
+                  rel="me noopener"
+                  >GitHub<span class="visually-hidden">
+                    (opens in a new tab)</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__base">
+        <p>© <span id="year">2026</span> Talia Zhuang</p>
+      </div>
+    </footer>
+
+    <!-- Floating "back to top" button: main.js shows it once you scroll down -->
+    <a class="to-top" href="#top" data-to-top>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+      <span class="visually-hidden">Back to top</span>
+    </a>
+
+    <script src="../js/main.js?v=3"></script>
+  </body>
+</html>

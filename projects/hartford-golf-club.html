@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Hartford Golf Club — Talia Zhuang</title>
+    <meta
+      name="description"
+      content="Hartford Golf Club case study: a branded Shopify pro shop with apparel, gear, lesson packages and gift cards."
+    />
+
+    <link
+      rel="canonical"
+      href="https://tahleeuh.com/projects/hartford-golf-club.html"
+    />
+
+    <!-- Icons -->
+    <link rel="icon" href="../assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/icons/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png" />
+    <meta
+      name="theme-color"
+      content="#fff8f1"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#171214"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!-- Link previews (LinkedIn, Slack, iMessage, etc.) -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Talia Zhuang — Designer &amp; Developer" />
+    <meta property="og:title" content="Hartford Golf Club — Talia Zhuang" />
+    <meta
+      property="og:description"
+      content="Hartford Golf Club case study: a branded Shopify pro shop with apparel, gear, lesson packages and gift cards."
+    />
+    <meta
+      property="og:url"
+      content="https://tahleeuh.com/projects/hartford-golf-club.html"
+    />
+    <meta
+      property="og:image"
+      content="https://tahleeuh.com/assets/og/hartford-golf-club.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Hartford Golf Club store homepage with the golf-ball crest"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Breadcrumb trail for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tahleeuh.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://tahleeuh.com/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Hartford Golf Club",
+            "item": "https://tahleeuh.com/projects/hartford-golf-club.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Set the theme before paint so there's no flash of the wrong mode -->
+    <script>
+      (function () {
+        var saved = null;
+        try {
+          saved = localStorage.getItem("theme");
+        } catch (e) {}
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts load without blocking the first paint; text shows in a fallback font until they arrive -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Serif+Display&family=Baskervville&family=Cormorant:ital@1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Serif+Display&family=Baskervville&family=Cormorant:ital@1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"></noscript>
+    <link rel="stylesheet" href="../css/styles.css?v=4" />
+  </head>
+  <body>
+    <!--
+    PROJECT PAGE TEMPLATE
+    To make a page for another project: copy this file (e.g. projects/snooze-n-snacks.html),
+    swap the text, facts and images (put images in assets/projects/<project-name>/),
+    then add a "Case study" link to that project's card in index.html.
+  -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <a class="nav__logo" href="../index.html"
+          >talia<span aria-hidden="true">.</span></a
+        >
+        <ul class="nav__links">
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch to dark mode"
+        >
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ============ THUMB NAV (phones only) ============ -->
+    <nav class="thumb-nav" aria-label="Sections">
+      <ul>
+        <li>
+          <a href="../index.html#projects" aria-current="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="3.5" width="7" height="7" rx="2" />
+              <rect x="13.5" y="3.5" width="7" height="7" rx="2" />
+              <rect x="3.5" y="13.5" width="7" height="7" rx="2" />
+              <rect x="13.5" y="13.5" width="7" height="7" rx="2" />
+            </svg>
+            <span>Work</span></a
+          >
+        </li>
+        <li>
+          <a href="../index.html#skills">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2Z"
+              />
+            </svg>
+            <span>Skills</span></a
+          >
+        </li>
+        <li>
+          <a href="../index.html#about">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8.5" r="4" />
+              <path d="M4.5 20.5c1.2-3.9 4.1-6 7.5-6s6.3 2.1 7.5 6" />
+            </svg>
+            <span>About</span></a
+          >
+        </li>
+        <li>
+          <a href="#contact">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5.5" width="18" height="13" rx="3" />
+              <path d="m4 7.5 8 6 8-6" />
+            </svg>
+            <span>Contact</span></a
+          >
+        </li>
+        <li>
+          <button
+            type="button"
+            class="thumb-nav__theme"
+            data-theme-toggle
+            aria-label="Switch to dark mode"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.5" />
+              <path
+                d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"
+              />
+            </svg>
+            <span class="thumb-nav__theme-text" aria-hidden="true">Dark</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="main">
+      <article class="case" style="--tint: var(--butter)">
+        <!-- ============ INTRO ============ -->
+        <header class="case__hero" id="top">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html#projects">Projects</a></li>
+              <li><span aria-current="page">Hartford Golf Club</span></li>
+            </ol>
+          </nav>
+          <p class="section__kicker">Shopify Store</p>
+          <h1 class="case__title">Hartford Golf Club</h1>
+          <p class="case__lede">
+            An online pro shop for a members' golf club in Hartford, Oregon,
+            selling apparel, gear, lesson packages and gift cards on a
+            customized Shopify theme.
+          </p>
+
+          <dl class="case__facts">
+            <div>
+              <dt>Course</dt>
+              <dd>Online Stores (FWDP 3700)</dd>
+            </div>
+            <div>
+              <dt>Platform</dt>
+              <dd>Shopify</dd>
+            </div>
+            <div>
+              <dt>Theme</dt>
+              <dd>Atelier, customized as "Golf-telier"</dd>
+            </div>
+            <div>
+              <dt>Typefaces</dt>
+              <dd>DM Serif Display, Baskervville, Cormorant</dd>
+            </div>
+          </dl>
+        </header>
+
+        <figure class="case__shot case__shot--wide reveal">
+          <div class="browser">
+            <div class="browser__bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <img
+              src="../assets/projects/hartford-golf-club/home.webp"
+              alt="Hartford Golf Club store homepage: the golf-ball crest with laurels beside the line: A quiet stretch of fairway, kept in good order since 1996. Navigation reads The Club, The Course, Pro Shop, Membership"
+              width="1600"
+              height="620"
+            />
+          </div>
+          <figcaption>
+            The homepage hero, in the club's cream, green and burnt orange.
+          </figcaption>
+        </figure>
+
+        <!-- ============ OVERVIEW ============ -->
+        <section class="case__section reveal" aria-labelledby="overview-title">
+          <h2 class="case__h2" id="overview-title">Overview</h2>
+          <div class="case__body">
+            <p>
+              Hartford Golf Club is a Shopify store for a members' club "kept in
+              good order since 1996." It sells branded apparel and equipment
+              from the pro shop, plus lesson packages and gift cards, all
+              wrapped in a heritage look built around a golf-ball crest.
+            </p>
+            <p>
+              The store runs on Shopify's Atelier theme, which I customized and
+              renamed "Golf-telier": new typography, the club's colour palette,
+              and a homepage laid out as a hero, collection links, a featured
+              product, a product list, a second hero and blog posts.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ BRAND ============ -->
+        <section class="case__section reveal" aria-labelledby="brand-title">
+          <h2 class="case__h2" id="brand-title">The brand</h2>
+          <div class="case__body">
+            <p>
+              A golf ball on a tee, framed by laurels, carries the whole
+              identity. It works in three colourways so it can sit on the store,
+              on cards and on merchandise.
+            </p>
+            <ul class="swatches" aria-label="Brand colours">
+              <li style="--c: #b44e05">
+                <span>Burnt orange</span><code>#B44E05</code>
+              </li>
+              <li style="--c: #eae5d9">
+                <span>Cream</span><code>#EAE5D9</code>
+              </li>
+              <li style="--c: #24382a">
+                <span>Forest green</span><code>#24382A</code>
+              </li>
+            </ul>
+            <ul class="type-specimens" aria-label="Typefaces">
+              <li>
+                <span
+                  class="type-specimens__sample"
+                  style="font-family: &quot;DM Serif Display&quot;, serif"
+                  >Hartford</span
+                ><span>DM Serif Display · headings</span>
+              </li>
+              <li>
+                <span
+                  class="type-specimens__sample"
+                  style="font-family: &quot;Baskervville&quot;, serif"
+                  >Kept in good order</span
+                ><span>Baskervville · body</span>
+              </li>
+              <li>
+                <span
+                  class="type-specimens__sample"
+                  style="
+                    font-family: &quot;Cormorant&quot;, serif;
+                    font-style: italic;
+                  "
+                  >Since 1996</span
+                ><span>Cormorant · accents</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="gallery gallery--crests reveal">
+          <img
+            src="../assets/projects/hartford-golf-club/crest-orange.webp"
+            alt="Hartford crest in cream on burnt orange"
+            width="700"
+            height="700"
+            loading="lazy"
+          />
+          <img
+            src="../assets/projects/hartford-golf-club/crest-cream-green.webp"
+            alt="Hartford crest in forest green on cream"
+            width="700"
+            height="700"
+            loading="lazy"
+          />
+          <img
+            src="../assets/projects/hartford-golf-club/crest-cream-orange.webp"
+            alt="Hartford crest in green and burnt orange on cream"
+            width="700"
+            height="700"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- ============ PRODUCTS ============ -->
+        <section class="case__section reveal" aria-labelledby="shop-title">
+          <h2 class="case__h2" id="shop-title">The pro shop</h2>
+          <div class="case__body">
+            <p>
+              Crested apparel and gear make up the catalogue: crewnecks, polos
+              and hoodies, plus golf balls and a stand bag, each shown on clean
+              product shots and lifestyle images.
+            </p>
+          </div>
+        </section>
+
+        <ul class="gallery gallery--products reveal" aria-label="Products">
+          <li>
+            <img
+              src="../assets/projects/hartford-golf-club/product-crewneck-lifestyle.webp"
+              alt="Person wearing a light pink Hartford crewneck sweatshirt"
+              width="640"
+              height="640"
+              loading="lazy"
+            /><span>Crewneck, lifestyle</span>
+          </li>
+          <li>
+            <img
+              src="../assets/projects/hartford-golf-club/product-crewneck.webp"
+              alt="Sand-coloured Hartford crewneck sweatshirt with a small chest crest"
+              width="640"
+              height="640"
+              loading="lazy"
+            /><span>Crewneck</span>
+          </li>
+          <li>
+            <img
+              src="../assets/projects/hartford-golf-club/product-polo.webp"
+              alt="Man in an orange Hartford polo shirt"
+              width="640"
+              height="640"
+              loading="lazy"
+            /><span>Polo</span>
+          </li>
+          <li>
+            <img
+              src="../assets/projects/hartford-golf-club/product-hoodie.webp"
+              alt="Olive green Hartford hoodie"
+              width="640"
+              height="640"
+              loading="lazy"
+            /><span>Hoodie</span>
+          </li>
+          <li>
+            <img
+              src="../assets/projects/hartford-golf-club/product-golf-ball.webp"
+              alt="White golf ball printed with the Hartford crest"
+              width="336"
+              height="336"
+              loading="lazy"
+            /><span>Golf ball</span>
+          </li>
+          <li>
+            <img
+              src="../assets/projects/hartford-golf-club/product-stand-bag.webp"
+              alt="Orange golf stand bag with clubs on a sunlit fairway"
+              width="640"
+              height="640"
+              loading="lazy"
+            /><span>Stand bag</span>
+          </li>
+        </ul>
+
+        <!-- ============ CARDS ============ -->
+        <section class="case__section reveal" aria-labelledby="cards-title">
+          <h2 class="case__h2" id="cards-title">Gift &amp; lesson cards</h2>
+          <div class="case__body">
+            <p>
+              Gift cards in set values and a punch-style card for a three-lesson
+              package, designed to match the crest and colourways.
+            </p>
+          </div>
+        </section>
+
+        <div class="gallery gallery--3 reveal">
+          <img
+            src="../assets/projects/hartford-golf-club/card-gift-100.webp"
+            alt="Burnt orange Hartford gift card, value $100"
+            width="900"
+            height="643"
+            loading="lazy"
+          />
+          <img
+            src="../assets/projects/hartford-golf-club/card-gift-250.webp"
+            alt="Burnt orange Hartford gift card, value $250"
+            width="900"
+            height="643"
+            loading="lazy"
+          />
+          <img
+            src="../assets/projects/hartford-golf-club/card-lesson.webp"
+            alt="Cream Hartford lesson card reading Three Lessons, with three boxes to mark off"
+            width="900"
+            height="643"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- ============ MARKETING ============ -->
+        <section class="case__section reveal" aria-labelledby="promo-title">
+          <h2 class="case__h2" id="promo-title">Promotions</h2>
+          <div class="case__body">
+            <p>
+              Two promotional pieces extend the brand beyond the store: a
+              playful lessons poster with a golf-ball mascot, and a course
+              guide.
+            </p>
+          </div>
+        </section>
+
+        <div class="gallery gallery--2 reveal">
+          <img
+            src="../assets/projects/hartford-golf-club/poster-lessons.webp"
+            alt="Lessons poster: GOLF CLUB. Fine-tune your skills with trusted golf services. A cartoon golf-ball character swings a club. Three Lessons, $240, order online"
+            width="720"
+            height="960"
+            loading="lazy"
+          />
+          <img
+            src="../assets/projects/hartford-golf-club/poster-course-guide.webp"
+            alt="Hartford golf course guide poster over a photo of the fairway, with prices starting from $20"
+            width="720"
+            height="900"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- ============ REFLECTION ============ -->
+        <section class="case__section reveal" aria-labelledby="learned-title">
+          <h2 class="case__h2" id="learned-title">What I learned</h2>
+          <div class="case__body">
+            <p>
+              This project was my first full Shopify store build. I set up
+              products and metafields, pages and posts, apps, store settings,
+              discounts and checkouts, the contact form and a testimonials
+              section, and customized the theme to fit the club's branding. It
+              showed me how much of a working e-commerce site comes from
+              configuration and content structure, not just code. Metafields in
+              particular showed me how to store extra product information in a
+              structured way so the theme can display it, instead of hard-coding
+              it into descriptions.
+            </p>
+
+            <p>
+              The one requirement I missed was on the search results page, which
+              was supposed to feature the three best-selling products. Mine
+              displayed all products instead. It's a good example of the gap
+              between something working and something meeting the spec: the
+              section rednered without errors, but I didn't filter by
+              best-seller or limit the product count. Next time I'll check each
+              output against the written requirement, not just confirm the page
+              loads.
+            </p>
+
+            <p>
+              The instructor encouraged me to go deeper into Liquid and to try
+              Shopify's GitHub-based development workflow, since many agencies
+              build client stores that way. That's the next step I plan to take:
+              moving from customizing through the theme editor to editing and
+              version-controolling theme code directly.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ NEXT ============ -->
+        <nav class="case__next" aria-label="More projects">
+          <a class="case__next-link" href="talia-portfolio.html"
+            ><span>Next project</span>This portfolio
+            <span aria-hidden="true">→</span></a
+          >
+          <a class="btn btn--primary btn--cta" href="../index.html#projects"
+            >See all projects <span aria-hidden="true">→</span></a
+          >
+        </nav>
+      </article>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" id="contact">
+      <div class="footer__inner">
+        <div class="footer__lead">
+          <p class="footer__big">Let's make something <em>lovely</em>.</p>
+          <a class="footer__email" href="mailto:talia.irma_@live.com"
+            >talia.irma_@live.com</a
+          >
+        </div>
+
+        <div class="footer__cols">
+          <div>
+            <h2 class="footer__label">Contact</h2>
+            <ul>
+              <li><a href="mailto:talia.irma_@live.com">Email</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="footer__label">Elsewhere</h2>
+            <ul class="socials">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/talia-lhi-zhuang/"
+                  target="_blank"
+                  rel="me noopener"
+                  >LinkedIn<span class="visually-hidden">
+                    (opens in a new tab)</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/taliaairma"
+                  target="_blank"
+                  rel="me noopener"
+                  >GitHub<span class="visually-hidden">
+                    (opens in a new tab)</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__base">
+        <p>© <span id="year">2026</span> Talia Zhuang</p>
+      </div>
+    </footer>
+
+    <!-- Floating "back to top" button: main.js shows it once you scroll down -->
+    <a class="to-top" href="#top" data-to-top>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+      <span class="visually-hidden">Back to top</span>
+    </a>
+
+    <script src="../js/main.js?v=3"></script>
+  </body>
+</html>

@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Snooze &amp; Snacks — Talia Zhuang</title>
+    <meta
+      name="description"
+      content="Snooze &amp; Snacks case study: a cozy cursor-chase browser game built with JavaScript and HTML canvas."
+    />
+
+    <link
+      rel="canonical"
+      href="https://tahleeuh.com/projects/snooze-n-snacks.html"
+    />
+
+    <!-- Icons -->
+    <link rel="icon" href="../assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/icons/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png" />
+    <meta
+      name="theme-color"
+      content="#fff8f1"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#171214"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!-- Link previews (LinkedIn, Slack, iMessage, etc.) -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Talia Zhuang — Designer &amp; Developer" />
+    <meta property="og:title" content="Snooze &amp; Snacks — Talia Zhuang" />
+    <meta
+      property="og:description"
+      content="Snooze &amp; Snacks case study: a cozy cursor-chase browser game built with JavaScript and HTML canvas."
+    />
+    <meta
+      property="og:url"
+      content="https://tahleeuh.com/projects/snooze-n-snacks.html"
+    />
+    <meta
+      property="og:image"
+      content="https://tahleeuh.com/assets/og/snooze-n-snacks.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Snooze and Snacks game screen: a pixel-art park with treats along the paths"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Breadcrumb trail for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tahleeuh.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://tahleeuh.com/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Snooze & Snacks",
+            "item": "https://tahleeuh.com/projects/snooze-n-snacks.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Set the theme before paint so there's no flash of the wrong mode -->
+    <script>
+      (function () {
+        var saved = null;
+        try {
+          saved = localStorage.getItem("theme");
+        } catch (e) {}
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts load without blocking the first paint; text shows in a fallback font until they arrive -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"></noscript>
+    <link rel="stylesheet" href="../css/styles.css?v=4" />
+  </head>
+  <body>
+    <!--
+    PROJECT PAGE TEMPLATE
+    To make a page for another project: copy this file (e.g. projects/snooze-n-snacks.html),
+    swap the text, facts and images (put images in assets/projects/<project-name>/),
+    then add a "Case study" link to that project's card in index.html.
+  -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <a class="nav__logo" href="../index.html"
+          >talia<span aria-hidden="true">.</span></a
+        >
+        <ul class="nav__links">
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch to dark mode"
+        >
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ============ THUMB NAV (phones only) ============ -->
+    <nav class="thumb-nav" aria-label="Sections">
+      <ul>
+        <li>
+          <a href="../index.html#projects" aria-current="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="3.5" width="7" height="7" rx="2" />
+              <rect x="13.5" y="3.5" width="7" height="7" rx="2" />
+              <rect x="3.5" y="13.5" width="7" height="7" rx="2" />
+              <rect x="13.5" y="13.5" width="7" height="7" rx="2" />
+            </svg>
+            <span>Work</span></a
+          >
+        </li>
+        <li>
+          <a href="../index.html#skills">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2Z"
+              />
+            </svg>
+            <span>Skills</span></a
+          >
+        </li>
+        <li>
+          <a href="../index.html#about">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8.5" r="4" />
+              <path d="M4.5 20.5c1.2-3.9 4.1-6 7.5-6s6.3 2.1 7.5 6" />
+            </svg>
+            <span>About</span></a
+          >
+        </li>
+        <li>
+          <a href="#contact">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5.5" width="18" height="13" rx="3" />
+              <path d="m4 7.5 8 6 8-6" />
+            </svg>
+            <span>Contact</span></a
+          >
+        </li>
+        <li>
+          <button
+            type="button"
+            class="thumb-nav__theme"
+            data-theme-toggle
+            aria-label="Switch to dark mode"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.5" />
+              <path
+                d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"
+              />
+            </svg>
+            <span class="thumb-nav__theme-text" aria-hidden="true">Dark</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="main">
+      <article class="case" style="--tint: var(--sage)">
+        <!-- ============ INTRO ============ -->
+        <header class="case__hero" id="top">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html#projects">Projects</a></li>
+              <li><span aria-current="page">Snooze &amp; Snacks</span></li>
+            </ol>
+          </nav>
+          <p class="section__kicker">Solo Project · Browser Game</p>
+          <h1 class="case__title">Snooze &amp; Snacks</h1>
+          <p class="case__lede">
+            A cozy cursor-chase game. Pick a cat or a dog, keep it moving, and
+            feed it treats before the timer runs out.
+          </p>
+
+          <div class="case__actions">
+            <a
+              class="btn btn--primary"
+              href="https://tahleeuh.com/snooze-n-snacks"
+              target="_blank"
+              rel="noopener"
+              >Play the game <span aria-hidden="true">↗</span
+              ><span class="visually-hidden"> (opens in a new tab)</span></a
+            >
+          </div>
+
+          <dl class="case__facts">
+            <div>
+              <dt>Course</dt>
+              <dd>Web Scripting 1</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>Solo project</dd>
+            </div>
+            <div>
+              <dt>Built with</dt>
+              <dd>JavaScript, HTML Canvas, CSS</dd>
+            </div>
+            <div>
+              <dt>Map made in</dt>
+              <dd>Tiled map editor</dd>
+            </div>
+          </dl>
+        </header>
+
+        <figure class="case__shot case__shot--wide reveal">
+          <div class="browser">
+            <div class="browser__bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <img
+              src="../assets/projects/snooze-n-snacks/game.webp"
+              alt="Snooze and Snacks game screen: a pixel-art park with grass, dirt paths and a pond, a countdown timer, a fullness bar, and Cat, Dog, New Game and Music buttons"
+              width="1440"
+              height="1000"
+            />
+          </div>
+          <figcaption>A 90-second snack run in a pixel-art park.</figcaption>
+        </figure>
+
+        <!-- ============ OVERVIEW ============ -->
+        <section class="case__section reveal" aria-labelledby="overview-title">
+          <h2 class="case__h2" id="overview-title">Overview</h2>
+          <div class="case__body">
+            <p>
+              Snooze &amp; Snacks is a small, calm game that runs right in the
+              browser. Your pet follows your cursor around a park while treats
+              pop up along the paths. Click them before they vanish to fill your
+              pet's fullness bar within 90 seconds. Stop moving for a moment,
+              and your pet curls up for a nap.
+            </p>
+            <p>
+              I built it on an HTML canvas with plain JavaScript: no game engine
+              or framework, just a render loop, a little state machine and a lot
+              of tiny sprites.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ HOW TO PLAY ============ -->
+        <section class="case__section reveal" aria-labelledby="play-title">
+          <h2 class="case__h2" id="play-title">How to play</h2>
+          <div class="case__body">
+            <ul class="case__list">
+              <li><strong>Move your mouse</strong> and your pet chases it.</li>
+              <li>
+                <strong>Click treats</strong> to collect them before they
+                disappear.
+              </li>
+              <li>
+                <strong>Fill the fullness bar</strong> before the 90-second
+                timer runs out.
+              </li>
+            </ul>
+            <ul class="treats" aria-label="Treat scores">
+              <li>
+                <img
+                  src="../assets/projects/snooze-n-snacks/treat-roast-chicken.png"
+                  alt=""
+                  width="48"
+                  height="48"
+                /><span>Roast chicken</span><strong>+4</strong>
+              </li>
+              <li>
+                <img
+                  src="../assets/projects/snooze-n-snacks/treat-beef.png"
+                  alt=""
+                  width="48"
+                  height="48"
+                /><span>Beef</span><strong>+3</strong>
+              </li>
+              <li>
+                <img
+                  src="../assets/projects/snooze-n-snacks/treat-cheese.png"
+                  alt=""
+                  width="48"
+                  height="48"
+                /><span>Cheese</span><strong>+2</strong>
+              </li>
+              <li>
+                <img
+                  src="../assets/projects/snooze-n-snacks/treat-milk.png"
+                  alt=""
+                  width="48"
+                  height="48"
+                /><span>Milk</span><strong>+2</strong>
+              </li>
+              <li class="treats__bad">
+                <img
+                  src="../assets/projects/snooze-n-snacks/treat-corndog.png"
+                  alt=""
+                  width="48"
+                  height="48"
+                /><span>Corndog</span><strong>−2</strong>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ============ HOW IT WORKS ============ -->
+        <section class="case__section reveal" aria-labelledby="how-title">
+          <h2 class="case__h2" id="how-title">How it works</h2>
+          <div class="case__body">
+            <ul class="case__cards">
+              <li>
+                <h3>A pet with moods</h3>
+                <p>
+                  A small state machine switches the pet between wandering,
+                  running, idling and sleeping. It naps after 3.5 seconds
+                  without mouse movement and wakes as soon as you move again.
+                </p>
+              </li>
+              <li>
+                <h3>A natural-feeling chase</h3>
+                <p>
+                  The pet follows where your cursor was 450ms ago, read from a
+                  short history of mouse positions, so it trails behind you
+                  instead of snapping to the pointer.
+                </p>
+              </li>
+              <li>
+                <h3>A map from Tiled</h3>
+                <p>
+                  The park was laid out in the Tiled map editor. The game loads
+                  its .tmj file, maps each tile ID to an image, and draws every
+                  layer onto the canvas.
+                </p>
+              </li>
+              <li>
+                <h3>Clean sprites</h3>
+                <p>
+                  Some sprite frames came with white backgrounds, so on load
+                  each one is drawn to an offscreen canvas and its near-white,
+                  neutral pixels are made transparent.
+                </p>
+              </li>
+              <li>
+                <h3>Fair clicking</h3>
+                <p>
+                  Treats get a 10px forgiveness radius so tiny pixel snacks are
+                  easy to hit, and bad treats can lower your score but never
+                  below zero.
+                </p>
+              </li>
+              <li>
+                <h3>Little reactions</h3>
+                <p>
+                  The cat gives a happy bap and the dog stops to sniff after
+                  each treat, and every animation runs at its own frame rate.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <figure class="case__shot sprites reveal">
+          <div
+            class="sprites__scroll"
+            tabindex="0"
+            role="region"
+            aria-label="Dog animation frames (scrolls sideways)"
+          >
+            <img
+              class="sprites__strip"
+              src="../assets/projects/snooze-n-snacks/dog-lie-down.png"
+              alt="Twelve pixel-art animation frames of a golden dog sitting, then lying down to sleep"
+              width="1624"
+              height="128"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="sprites__scroll"
+            tabindex="0"
+            role="region"
+            aria-label="Cat animation frames (scrolls sideways)"
+          >
+            <img
+              class="sprites__strip"
+              src="../assets/projects/snooze-n-snacks/cat-run.png"
+              alt="Eight pixel-art animation frames of a grey cat running"
+              width="1350"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>
+            Frame by frame: the dog settling in for a nap, and the cat
+            mid-sprint.
+          </figcaption>
+        </figure>
+
+        <!-- ============ REFLECTION ============ -->
+        <section class="case__section reveal" aria-labelledby="learned-title">
+          <h2 class="case__h2" id="learned-title">What I learned</h2>
+          <div class="case__body">
+            <p>
+              Snooze & Snacks is a cozy cursor-chase game built with vanilla
+              JavaScript and the HTML canvas. It was my first project where I
+              had to think in terms of a game loop instead of a page reacting to
+              clicks. I managed a central game state (score, fullness, timer,
+              the active pet and its behaviour), preloaded tile and sprite
+              images before the game could start, and redrew the HUD and
+              overlays every frame.
+            </p>
+
+            <p>
+              A lot of what I learned was about how the game feels, not just
+              whether it works. I added a forgiveness radius to click detection
+              so small treats weren't frustrating to catch. I clamped the score
+              so bad treats couldn't push it below zero, and capped the fullness
+              bar at its maximum. None of these rules show up as features, but
+              without them the game feels unfair or broken. Keeping tunable
+              values like treat size, time limit, and max fullness in a
+              <code>CONFIG</code> object meant I could adjust the balance
+              without searching through the logic.
+            </p>
+
+            <p>
+              The one issue the instructor found was in my CSS, not my
+              JavaScript. My <code>@font-face</code> rule listed several font
+              formats (<code>.eot</code>, <code>.woff</code>, <code>.ttf</code>,
+              <code>.svg</code>) and file paths that didn't match the files
+              actually in my project. The fix was to organize the font into its
+              own folder, point <code>src</code> at the one
+              <code>.woff2</code> file I had with the correct relative path, and
+              drop the legacy formats modern browers don't need. Because
+              browsers fail quietly when a font doesn't load, the bug was easy
+              to miss. The lesson I took is to check in DevTools that assets
+              actually load, instead of trusting that the page looks about
+              right.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ NEXT ============ -->
+        <nav class="case__next" aria-label="More projects">
+          <a class="case__next-link" href="hartford-golf-club.html"
+            ><span>Next project</span>Hartford Golf Club
+            <span aria-hidden="true">→</span></a
+          >
+          <a class="btn btn--primary btn--cta" href="../index.html#projects"
+            >See all projects <span aria-hidden="true">→</span></a
+          >
+        </nav>
+      </article>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" id="contact">
+      <div class="footer__inner">
+        <div class="footer__lead">
+          <p class="footer__big">Let's make something <em>lovely</em>.</p>
+          <a class="footer__email" href="mailto:talia.irma_@live.com"
+            >talia.irma_@live.com</a
+          >
+        </div>
+
+        <div class="footer__cols">
+          <div>
+            <h2 class="footer__label">Contact</h2>
+            <ul>
+              <li><a href="mailto:talia.irma_@live.com">Email</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="footer__label">Elsewhere</h2>
+            <ul class="socials">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/talia-lhi-zhuang/"
+                  target="_blank"
+                  rel="me noopener"
+                  >LinkedIn<span class="visually-hidden">
+                    (opens in a new tab)</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/taliaairma"
+                  target="_blank"
+                  rel="me noopener"
+                  >GitHub<span class="visually-hidden">
+                    (opens in a new tab)</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__base">
+        <p>© <span id="year">2026</span> Talia Zhuang</p>
+      </div>
+    </footer>
+
+    <!-- Floating "back to top" button: main.js shows it once you scroll down -->
+    <a class="to-top" href="#top" data-to-top>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+      <span class="visually-hidden">Back to top</span>
+    </a>
+
+    <script src="../js/main.js?v=3"></script>
+  </body>
+</html>

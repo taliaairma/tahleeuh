@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Page not found (404) — Talia Zhuang</title>
+  <meta name="description" content="This page ran off. Head back to Talia's portfolio home page or projects.">
+  <!-- Error pages shouldn't show up in search results -->
+  <meta name="robots" content="noindex">
+
+  <!-- Paths start with "/" because this page can be shown at any address, e.g. /projects/old-page -->
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#fff8f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171214" media="(prefers-color-scheme: dark)">
+
+  <!-- Set the theme before paint so there's no flash of the wrong mode -->
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts load without blocking the first paint; text shows in a fallback font until they arrive -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"></noscript>
+  <link rel="stylesheet" href="/css/styles.css?v=4">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="nav__logo" href="/">talia<span aria-hidden="true">.</span></a>
+      <ul class="nav__links">
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ THUMB NAV (phones only) ============ -->
+  <nav class="thumb-nav" aria-label="Sections">
+    <ul>
+      <li><a href="/#projects">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>
+        <span>Work</span></a></li>
+      <li><a href="/#skills">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2Z"/></svg>
+        <span>Skills</span></a></li>
+      <li><a href="/#about">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c1.2-3.9 4.1-6 7.5-6s6.3 2.1 7.5 6"/></svg>
+        <span>About</span></a></li>
+      <li><a href="#contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="m4 7.5 8 6 8-6"/></svg>
+        <span>Contact</span></a></li>
+      <li><button type="button" class="thumb-nav__theme" data-theme-toggle aria-label="Switch to dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+        <span class="thumb-nav__theme-text" aria-hidden="true">Dark</span></button></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <section class="lost" id="top" aria-labelledby="lost-title">
+
+      <div class="lost__text">
+        <p class="section__kicker">Error 404 · Ball not found</p>
+
+        <!-- The big "4 (tennis ball) 4"; the h1 below carries the meaning for screen readers -->
+        <p class="lost__code" aria-hidden="true">
+          <span>4</span>
+          <svg class="lost__ball" data-ball viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="46" fill="#d9ec5b" stroke="currentColor" stroke-width="4"/>
+            <path d="M14 26c20 10 26 38 8 56M86 18c-20 12-26 42-6 64" fill="none" stroke="#fff8f1" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <span>4</span>
+        </p>
+
+        <h1 class="lost__title" id="lost-title">Fetch failed.</h1>
+        <p class="lost__lede">I threw <code>fetch()</code> for this page, but the pup came back with a stick. The link may be old, or the page wandered off to sniff something.</p>
+
+        <div class="lost__actions">
+          <a class="btn btn--primary" href="/">Go home, good pup <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="/#projects">See my projects</a>
+        </div>
+      </div>
+
+      <div>
+        <figure class="lost__console">
+          <div class="lost__bar" aria-hidden="true"><span></span><span></span><span></span><b>backyard.js</b></div>
+          <!-- New lines are announced politely when "Throw it again" is pressed -->
+          <ol class="lost__log" data-log aria-live="polite">
+            <li><span class="lost__prompt" aria-hidden="true">&gt;</span> fetch(<span class="lost__str">"<span data-path>/this-page</span>"</span>)</li>
+            <li class="lost__err"><span aria-hidden="true">✖</span> 404 Not Found</li>
+            <li class="lost__dim">&nbsp;&nbsp;at goodPup.fetch (backyard.js:4:04)</li>
+            <li class="lost__note">// returned: 1 × stick (very proud of it)</li>
+          </ol>
+          <figcaption class="visually-hidden">A pretend code console showing the fetch for this page failing</figcaption>
+        </figure>
+        <div class="lost__under">
+          <button class="btn btn--ghost" type="button" data-retry>Throw it again <span aria-hidden="true">↻</span></button>
+          <p class="lost__aside" aria-hidden="true">she tried her best ♡</p>
+          <img class="lost__pup" src="/assets/stickers/sticker-poodle.webp" alt="" width="552" height="899">
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="contact">
+    <div class="footer__inner">
+      <div class="footer__lead">
+        <p class="footer__big">Let's make something <em>lovely</em>.</p>
+        <a class="footer__email" href="mailto:talia.irma_@live.com">talia.irma_@live.com</a>
+      </div>
+
+      <div class="footer__cols">
+        <div>
+          <h2 class="footer__label">Contact</h2>
+          <ul>
+            <li><a href="mailto:talia.irma_@live.com">Email</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__label">Elsewhere</h2>
+          <ul class="socials">
+            <li><a href="https://www.linkedin.com/in/talia-lhi-zhuang/" target="_blank" rel="me noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://github.com/taliaairma" target="_blank" rel="me noopener">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__base">
+      <p>© <span id="year">2026</span> Talia Zhuang</p>
+    </div>
+  </footer>
+
+  <!-- Floating "back to top" button: main.js shows it once you scroll down -->
+  <a class="to-top" href="#top" data-to-top>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+    <span class="visually-hidden">Back to top</span>
+  </a>
+
+  <script src="/js/main.js?v=3"></script>
+</body>
+</html>
