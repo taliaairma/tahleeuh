@@ -1,272 +1,613 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>This portfolio — Talia Zhuang</title>
-  <meta name="description" content="Case study for this portfolio: a mobile-first, accessible static site with floating photo stickers, light and dark modes and a thumb-friendly phone nav.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>This portfolio — Talia Zhuang</title>
+    <meta
+      name="description"
+      content="Case study for this portfolio: a mobile-first, accessible static site with floating photo stickers, light and dark modes and a thumb-friendly phone nav."
+    />
 
-  <link rel="canonical" href="https://tahleeuh.com/projects/talia-portfolio.html">
+    <link
+      rel="canonical"
+      href="https://tahleeuh.com/projects/talia-portfolio.html"
+    />
 
-  <!-- Icons -->
-  <link rel="icon" href="../assets/icons/favicon.ico" sizes="any">
-  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="../assets/icons/favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
-  <meta name="theme-color" content="#fff8f1" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#171214" media="(prefers-color-scheme: dark)">
+    <!-- Icons -->
+    <link rel="icon" href="../assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="../assets/icons/favicon-32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png" />
+    <meta
+      name="theme-color"
+      content="#fff8f1"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#171214"
+      media="(prefers-color-scheme: dark)"
+    />
 
-  <!-- Link previews (LinkedIn, Slack, iMessage, etc.) -->
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Talia Zhuang — Designer &amp; Developer">
-  <meta property="og:title" content="This portfolio — Talia Zhuang">
-  <meta property="og:description" content="Case study for this portfolio: a mobile-first, accessible static site with floating photo stickers, light and dark modes and a thumb-friendly phone nav.">
-  <meta property="og:url" content="https://tahleeuh.com/projects/talia-portfolio.html">
-  <meta property="og:image" content="https://tahleeuh.com/assets/og/home.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="The name TALIA surrounded by floating photo stickers of nail art and groomed dogs">
-  <meta name="twitter:card" content="summary_large_image">
+    <!-- Link previews (LinkedIn, Slack, iMessage, etc.) -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:site_name"
+      content="Talia Zhuang — Designer &amp; Developer"
+    />
+    <meta property="og:title" content="This portfolio — Talia Zhuang" />
+    <meta
+      property="og:description"
+      content="Case study for this portfolio: a mobile-first, accessible static site with floating photo stickers, light and dark modes and a thumb-friendly phone nav."
+    />
+    <meta
+      property="og:url"
+      content="https://tahleeuh.com/projects/talia-portfolio.html"
+    />
+    <meta
+      property="og:image"
+      content="https://tahleeuh.com/assets/og/home.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="The name TALIA surrounded by floating photo stickers of nail art and groomed dogs"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Breadcrumb trail for search engines -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tahleeuh.com/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://tahleeuh.com/#projects"},{"@type":"ListItem","position":3,"name":"This portfolio","item":"https://tahleeuh.com/projects/talia-portfolio.html"}]}</script>
-
-  <!-- Set the theme before paint so there's no flash of the wrong mode -->
-  <script>
-    (function () {
-      var saved = null;
-      try { saved = localStorage.getItem('theme'); } catch (e) {}
-      if (saved === 'light' || saved === 'dark') {
-        document.documentElement.setAttribute('data-theme', saved);
+    <!-- Breadcrumb trail for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tahleeuh.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://tahleeuh.com/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "This portfolio",
+            "item": "https://tahleeuh.com/projects/talia-portfolio.html"
+          }
+        ]
       }
-    })();
-  </script>
+    </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Fonts load without blocking the first paint; text shows in a fallback font until they arrive -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"></noscript>
-  <link rel="stylesheet" href="../css/styles.css?v=4">
-</head>
-<body>
-  <!--
-    PROJECT PAGE TEMPLATE
-    To make a page for another project: copy this file (e.g. projects/snooze-n-snacks.html),
-    swap the text, facts and images (put images in assets/projects/<project-name>/),
-    then add a "Case study" link to that project's card in index.html.
-  -->
-  <a class="skip-link" href="#main">Skip to content</a>
+    <!-- Set the theme before paint so there's no flash of the wrong mode -->
+    <script>
+      (function () {
+        var saved = null;
+        try {
+          saved = localStorage.getItem('theme');
+        } catch (e) {}
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      })();
+    </script>
 
-  <!-- ============ HEADER ============ -->
-  <header class="site-header">
-    <nav class="nav" aria-label="Main">
-      <a class="nav__logo" href="../index.html">talia<span aria-hidden="true">.</span></a>
-      <ul class="nav__links">
-        <li><a href="../index.html#projects">Projects</a></li>
-        <li><a href="../index.html#skills">Skills</a></li>
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
-      </button>
-    </nav>
-  </header>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts load without blocking the first paint; text shows in a fallback font until they arrive -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+    /></noscript>
+    <link rel="stylesheet" href="../css/styles.css?v=5" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ============ THUMB NAV (phones only) ============ -->
-  <nav class="thumb-nav" aria-label="Sections">
-    <ul>
-      <li><a href="../index.html#projects" aria-current="true">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>
-        <span>Work</span></a></li>
-      <li><a href="../index.html#skills">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2Z"/></svg>
-        <span>Skills</span></a></li>
-      <li><a href="../index.html#about">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c1.2-3.9 4.1-6 7.5-6s6.3 2.1 7.5 6"/></svg>
-        <span>About</span></a></li>
-      <li><a href="#contact">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="m4 7.5 8 6 8-6"/></svg>
-        <span>Contact</span></a></li>
-      <li><button type="button" class="thumb-nav__theme" data-theme-toggle aria-label="Switch to dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
-        <span class="thumb-nav__theme-text" aria-hidden="true">Dark</span></button></li>
-    </ul>
-  </nav>
-
-  <main id="main">
-    <article class="case" style="--tint: var(--pink); --tint-ink: #141111;">
-
-      <!-- ============ INTRO ============ -->
-      <header class="case__hero" id="top">
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
-          <ol>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../index.html#projects">Projects</a></li>
-            <li><span aria-current="page">This portfolio</span></li>
-          </ol>
-        </nav>
-        <p class="section__kicker">Personal Project · Design &amp; Development</p>
-        <h1 class="case__title">This portfolio</h1>
-        <p class="case__lede">The site you're on: a portfolio that feels as personal as a sticker-covered notebook, built to be fast, accessible and easy to use on any screen.</p>
-
-        <div class="case__actions">
-          <a class="btn btn--primary" href="../index.html">See the home page <span aria-hidden="true">→</span></a>
-        </div>
-
-        <dl class="case__facts">
-          <div><dt>Course</dt><dd>Web Portfolio Projects</dd></div>
-          <div><dt>Team</dt><dd>Solo project</dd></div>
-          <div><dt>Built with</dt><dd>HTML, CSS, JavaScript (no framework)</dd></div>
-          <div><dt>Live at</dt><dd>tahleeuh.com</dd></div>
-        </dl>
-      </header>
-
-      <figure class="case__shot case__shot--wide reveal">
-        <div class="browser">
-          <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-          <img src="../assets/projects/talia-portfolio/home-light.webp" alt="Portfolio home page in light mode: the name TALIA in bold black letters with photo stickers floating around it on a cream background" width="1366" height="800">
-        </div>
-        <figcaption>The home page: my name, surrounded by the things that made me.</figcaption>
-      </figure>
-
-      <!-- ============ OVERVIEW ============ -->
-      <section class="case__section reveal" aria-labelledby="overview-title">
-        <h2 class="case__h2" id="overview-title">Overview</h2>
-        <div class="case__body">
-          <p>I wanted a portfolio that told my career-change story at a glance: years of grooming dogs and designing nail art, now pointed at web design and development. Instead of a standard hero image, my name sits in the middle of the page with photo stickers of my work, my dogs and me floating around it.</p>
-          <p>Under the playful surface, the goals were practical: show my projects clearly, make my skills and background easy to find, and meet a real standard for accessibility and performance on every screen size.</p>
-        </div>
-      </section>
-
-      <!-- ============ DESIGN ============ -->
-      <section class="case__section reveal" aria-labelledby="design-title">
-        <h2 class="case__h2" id="design-title">Design system</h2>
-        <div class="case__body">
-          <p>Soft pinks on cream with near-black text, and a matching dark mode. Every colour is a CSS variable, so the whole site switches theme by swapping one set of tokens.</p>
-          <ul class="swatches" aria-label="Brand colours">
-            <li style="--c: #fff8f1;"><span>Cream</span><code>#FFF8F1</code></li>
-            <li style="--c: #f6c4cf;"><span>Soft pink</span><code>#F6C4CF</code></li>
-            <li style="--c: #b0385c;"><span>Rose (text)</span><code>#B0385C</code></li>
-          </ul>
-          <ul class="type-specimens" aria-label="Typefaces">
-            <li><span class="type-specimens__sample" style="font-family: var(--font-display); font-weight: 800;">TALIA</span><span>Bricolage Grotesque · headings</span></li>
-            <li><span class="type-specimens__sample" style="font-family: var(--font-body);">Soft, thoughtful</span><span>DM Sans · body</span></li>
-            <li><span class="type-specimens__sample" style="font-family: var(--font-hand);">psst — hi there</span><span>Caveat · handwritten notes</span></li>
-          </ul>
-        </div>
-      </section>
-
-      <div class="case__pair case__pair--mixed reveal">
-        <figure class="case__shot">
-          <div class="browser">
-            <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-            <img src="../assets/projects/talia-portfolio/home-dark.webp" alt="Portfolio home page in dark mode: cream letters and the same photo stickers on a deep plum background" width="1366" height="800" loading="lazy">
-          </div>
-          <figcaption>Dark mode follows your device, or the toggle, and remembers your choice.</figcaption>
-        </figure>
-        <figure class="case__shot case__shot--phone">
-          <img src="../assets/projects/talia-portfolio/home-phone.webp" alt="Portfolio home page on a phone: stickers stacked above and below the name, with a navigation bar along the bottom of the screen" width="375" height="812" loading="lazy">
-          <figcaption>On phones, the nav moves to the bottom, within thumb reach.</figcaption>
-        </figure>
-      </div>
-
-      <!-- ============ FEATURES ============ -->
-      <section class="case__section reveal" aria-labelledby="features-title">
-        <h2 class="case__h2" id="features-title">What's inside</h2>
-        <div class="case__body">
-          <ul class="case__cards">
-            <li><h3>Floating stickers</h3><p>Die-cut photo stickers drift gently around my name. The nail and dog stickers link straight to the matching answer in my About section and open it.</p></li>
-            <li><h3>Thumb-friendly nav</h3><p>On phones, a bottom navigation bar keeps every section one tap away and highlights the section you're reading.</p></li>
-            <li><h3>Light &amp; dark</h3><p>Follows your device's setting by default, with a toggle that remembers your choice and never flashes the wrong theme on load.</p></li>
-            <li><h3>Adaptive testimonials</h3><p>Three quotes or fewer show as a grid; four or more become a swipeable carousel with labelled arrow buttons.</p></li>
-            <li><h3>Drop-down Q&amp;As</h3><p>My background lives in native disclosure widgets, so the answers work with a keyboard and screen reader, even without JavaScript.</p></li>
-            <li><h3>Case studies</h3><p>Every project has its own page with breadcrumbs, real screenshots, and links to the next project.</p></li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- ============ QUALITY ============ -->
-      <section class="case__section reveal" aria-labelledby="quality-title">
-        <h2 class="case__h2" id="quality-title">Accessibility &amp; performance</h2>
-        <div class="case__body">
-          <ul class="stats" aria-label="Key numbers">
-            <li><strong>~240 KB</strong><span>first load of the home page</span></li>
-            <li><strong>5.2:1+</strong><span>contrast on all accent text (WCAG AA)</span></li>
-            <li><strong>44 px+</strong><span>tap targets on phones</span></li>
-            <li><strong>0</strong><span>frameworks or build steps</span></li>
-          </ul>
-          <ul class="case__list">
-            <li><strong>Mobile-first CSS:</strong> base styles are for phones, and min-width media queries add the tablet and desktop layouts.</li>
-            <li><strong>Optimized images:</strong> WebP everywhere, with transparency for the stickers, lazy loading below the fold, and set dimensions so nothing jumps while the page loads.</li>
-            <li><strong>Accessible by default:</strong> meaningful alt text, visible focus rings, skip link, labelled navigation, and reduced motion for anyone who prefers it.</li>
-            <li><strong>Findable:</strong> descriptive titles and meta descriptions, link-preview images, canonical URLs and structured data for search engines.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- ============ REFLECTION ============ -->
-      <section class="case__section reveal" aria-labelledby="learned-title">
-        <h2 class="case__h2" id="learned-title">What I learned</h2>
-        <div class="case__body">
-          <p>Designing my own brand was harder than designing for a client, because there was no brief to check my decisions against. I wanted the site to tell my career-change story without saying "career change" in big letters, so I let the design carry it: my name sits in the middle of the page, surrounded by photo stickers of my nail art, the dogs I've groomed, and me. Every one of those images had to earn its place. The nail and dog stickers link straight to the matching answer in my About section, so the decoration doubles as navigation into my background.</p>
-
-            <p>My colour palette taught me the difference between a colour looking right and a colour working. The soft pink that defines the brand fails WCAG contrast as text on cream. Instead of dropping it, I split it into two tokens. The light pink stays for decoration like bullets, flowers, and quote marks. A deeper rose (#B0385C, at least 5.2:1) handles every piece of accent text and every focus ring. Setting up all colours as CSS variables from the start also meant dark mode came down to swapping one set of tokens. A small script in the <code>&lt;head&gt;</code> applies the saved theme before the page paints, so it never flashes the wrong mode.</p>
-
-            <p>Building mobile-first changed how I think about layout. I wrote the base styles for phones and added the tablet and desktop layouts with min-width queries. That forced me to decide what mattered most on a small screen before adding anything else. The bottom thumb navigation came out of that process: on a phone, a top menu is the hardest thing to reach. The stickers were the trickiest part to make responsive. Their positions and sizes are all percentages of the hero, with a separate set of values for phones, so they stay clear of the letters at every width.</p>
-
-            <p>I chose plain HTML, CSS and JavaScript with no framework or build step. After working in React on Polar DB, I wanted to show I understand what the browser gives you on its own. The FAQ uses native <code>&lt;details&gt;</code> elements, so it works with a keyboard and screen reader even without JavaScript. Images are WebP with set dimensions so nothing jumps while the page loads, and animations turn off for anyone who has asked their device for reduced motion. The home page loads in about 240 KB.</p>
-
-            <p>Next, I will be adding new case studies as I finish projects, starting with my capstone.</p>
-        </div>
-      </section>
-
-      <!-- ============ NEXT ============ -->
-      <nav class="case__next" aria-label="More projects">
-        <a class="case__next-link" href="polar-db.html"><span>Next project</span>Polar DB <span aria-hidden="true">→</span></a>
-        <a class="btn btn--primary btn--cta" href="../index.html#projects">See all projects <span aria-hidden="true">→</span></a>
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <a class="nav__logo" href="../index.html"
+          >talia<span aria-hidden="true">.</span></a
+        >
+        <ul class="nav__links">
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch to dark mode"
+        >
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"
+            />
+          </svg>
+        </button>
       </nav>
-    </article>
-  </main>
+    </header>
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer" id="contact">
-    <div class="footer__inner">
-      <div class="footer__lead">
-        <p class="footer__big">Let's make something <em>lovely</em>.</p>
-        <a class="footer__email" href="mailto:talia.irma_@live.com">talia.irma_@live.com</a>
-      </div>
+    <!-- ============ THUMB NAV (phones only) ============ -->
+    <nav class="thumb-nav" aria-label="Sections">
+      <ul>
+        <li>
+          <a href="../index.html#projects" aria-current="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="3.5" width="7" height="7" rx="2" />
+              <rect x="13.5" y="3.5" width="7" height="7" rx="2" />
+              <rect x="3.5" y="13.5" width="7" height="7" rx="2" />
+              <rect x="13.5" y="13.5" width="7" height="7" rx="2" />
+            </svg>
+            <span>Work</span></a
+          >
+        </li>
+        <li>
+          <a href="../index.html#skills">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2Z"
+              />
+            </svg>
+            <span>Skills</span></a
+          >
+        </li>
+        <li>
+          <a href="../index.html#about">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8.5" r="4" />
+              <path d="M4.5 20.5c1.2-3.9 4.1-6 7.5-6s6.3 2.1 7.5 6" />
+            </svg>
+            <span>About</span></a
+          >
+        </li>
+        <li>
+          <a href="#contact">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5.5" width="18" height="13" rx="3" />
+              <path d="m4 7.5 8 6 8-6" />
+            </svg>
+            <span>Contact</span></a
+          >
+        </li>
+        <li>
+          <button
+            type="button"
+            class="thumb-nav__theme"
+            data-theme-toggle
+            aria-label="Switch to dark mode"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.5" />
+              <path
+                d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"
+              />
+            </svg>
+            <span class="thumb-nav__theme-text" aria-hidden="true">Dark</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
 
-      <div class="footer__cols">
-        <div>
-          <h2 class="footer__label">Contact</h2>
-          <ul>
-            <li><a href="mailto:talia.irma_@live.com">Email</a></li>
-          </ul>
+    <main id="main">
+      <article class="case" style="--tint: var(--pink); --tint-ink: #141111">
+        <!-- ============ INTRO ============ -->
+        <header class="case__hero" id="top">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html#projects">Projects</a></li>
+              <li><span aria-current="page">This portfolio</span></li>
+            </ol>
+          </nav>
+          <p class="section__kicker">
+            Personal Project · Design &amp; Development
+          </p>
+          <h1 class="case__title">This portfolio</h1>
+          <p class="case__lede">
+            The site you're on: a portfolio that feels as personal as a
+            sticker-covered notebook, built to be fast, accessible and easy to
+            use on any screen.
+          </p>
+
+          <div class="case__actions">
+            <a class="btn btn--primary" href="../index.html"
+              >See the home page <span aria-hidden="true">→</span></a
+            >
+          </div>
+
+          <dl class="case__facts">
+            <div>
+              <dt>Course</dt>
+              <dd>Web Portfolio Projects</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>Solo project</dd>
+            </div>
+            <div>
+              <dt>Built with</dt>
+              <dd>HTML, CSS, JavaScript (no framework)</dd>
+            </div>
+            <div>
+              <dt>Live at</dt>
+              <dd>tahleeuh.com</dd>
+            </div>
+          </dl>
+        </header>
+
+        <figure class="case__shot case__shot--wide reveal">
+          <div class="browser">
+            <div class="browser__bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <img
+              src="../assets/projects/talia-portfolio/home-light.webp"
+              alt="Portfolio home page in light mode: the name TALIA in bold black letters with photo stickers floating around it on a cream background"
+              width="1366"
+              height="800"
+            />
+          </div>
+          <figcaption>
+            The home page: my name, surrounded by the things that made me.
+          </figcaption>
+        </figure>
+
+        <!-- ============ OVERVIEW ============ -->
+        <section class="case__section reveal" aria-labelledby="overview-title">
+          <h2 class="case__h2" id="overview-title">Overview</h2>
+          <div class="case__body">
+            <p>
+              I wanted a portfolio that told my career-change story at a glance:
+              years of grooming dogs and designing nail art, now pointed at web
+              design and development. Instead of a standard hero image, my name
+              sits in the middle of the page with photo stickers of my work, my
+              dogs and me floating around it.
+            </p>
+            <p>
+              Under the playful surface, the goals were practical: show my
+              projects clearly, make my skills and background easy to find, and
+              meet a real standard for accessibility and performance on every
+              screen size.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ DESIGN ============ -->
+        <section class="case__section reveal" aria-labelledby="design-title">
+          <h2 class="case__h2" id="design-title">Design system</h2>
+          <div class="case__body">
+            <p>
+              Soft pinks on cream with near-black text, and a matching dark
+              mode. Every colour is a CSS variable, so the whole site switches
+              theme by swapping one set of tokens.
+            </p>
+            <ul class="swatches" aria-label="Brand colours">
+              <li style="--c: #fff8f1">
+                <span>Cream</span><code>#FFF8F1</code>
+              </li>
+              <li style="--c: #f6c4cf">
+                <span>Soft pink</span><code>#F6C4CF</code>
+              </li>
+              <li style="--c: #b0385c">
+                <span>Rose (text)</span><code>#B0385C</code>
+              </li>
+            </ul>
+            <ul class="type-specimens" aria-label="Typefaces">
+              <li>
+                <span
+                  class="type-specimens__sample"
+                  style="font-family: var(--font-display); font-weight: 800"
+                  >TALIA</span
+                ><span>Bricolage Grotesque · headings</span>
+              </li>
+              <li>
+                <span
+                  class="type-specimens__sample"
+                  style="font-family: var(--font-body)"
+                  >Soft, thoughtful</span
+                ><span>DM Sans · body</span>
+              </li>
+              <li>
+                <span
+                  class="type-specimens__sample"
+                  style="font-family: var(--font-hand)"
+                  >psst — hi there</span
+                ><span>Caveat · handwritten notes</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="case__pair case__pair--mixed reveal">
+          <figure class="case__shot">
+            <div class="browser">
+              <div class="browser__bar" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <img
+                src="../assets/projects/talia-portfolio/home-dark.webp"
+                alt="Portfolio home page in dark mode: cream letters and the same photo stickers on a deep plum background"
+                width="1366"
+                height="800"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              Dark mode follows your device, or the toggle, and remembers your
+              choice.
+            </figcaption>
+          </figure>
+          <figure class="case__shot case__shot--phone">
+            <img
+              src="../assets/projects/talia-portfolio/home-phone.webp"
+              alt="Portfolio home page on a phone: stickers stacked above and below the name, with a navigation bar along the bottom of the screen"
+              width="375"
+              height="812"
+              loading="lazy"
+            />
+            <figcaption>
+              On phones, the nav moves to the bottom, within thumb reach.
+            </figcaption>
+          </figure>
         </div>
-        <div>
-          <h2 class="footer__label">Elsewhere</h2>
-          <ul class="socials">
-            <li><a href="https://www.linkedin.com/in/talia-lhi-zhuang/" target="_blank" rel="me noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-            <li><a href="https://github.com/taliaairma" target="_blank" rel="me noopener">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-          </ul>
+
+        <!-- ============ FEATURES ============ -->
+        <section class="case__section reveal" aria-labelledby="features-title">
+          <h2 class="case__h2" id="features-title">What's inside</h2>
+          <div class="case__body">
+            <ul class="case__cards">
+              <li>
+                <h3>Floating stickers</h3>
+                <p>
+                  Die-cut photo stickers drift gently around my name. The nail
+                  and dog stickers link straight to the matching answer in my
+                  About section and open it.
+                </p>
+              </li>
+              <li>
+                <h3>Thumb-friendly nav</h3>
+                <p>
+                  On phones, a bottom navigation bar keeps every section one tap
+                  away and highlights the section you're reading.
+                </p>
+              </li>
+              <li>
+                <h3>Light &amp; dark</h3>
+                <p>
+                  Follows your device's setting by default, with a toggle that
+                  remembers your choice and never flashes the wrong theme on
+                  load.
+                </p>
+              </li>
+              <li>
+                <h3>Adaptive testimonials</h3>
+                <p>
+                  Three quotes or fewer show as a grid; four or more become a
+                  swipeable carousel with labelled arrow buttons.
+                </p>
+              </li>
+              <li>
+                <h3>Drop-down Q&amp;As</h3>
+                <p>
+                  My background lives in native disclosure widgets, so the
+                  answers work with a keyboard and screen reader, even without
+                  JavaScript.
+                </p>
+              </li>
+              <li>
+                <h3>Case studies</h3>
+                <p>
+                  Every project has its own page with breadcrumbs, real
+                  screenshots, and links to the next project.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ============ QUALITY ============ -->
+        <section class="case__section reveal" aria-labelledby="quality-title">
+          <h2 class="case__h2" id="quality-title">
+            Accessibility &amp; performance
+          </h2>
+          <div class="case__body">
+            <ul class="stats" aria-label="Key numbers">
+              <li>
+                <strong>~240 KB</strong><span>first load of the home page</span>
+              </li>
+              <li>
+                <strong>5.2:1+</strong
+                ><span>contrast on all accent text (WCAG AA)</span>
+              </li>
+              <li><strong>44 px+</strong><span>tap targets on phones</span></li>
+              <li><strong>0</strong><span>frameworks or build steps</span></li>
+            </ul>
+            <ul class="case__list">
+              <li>
+                <strong>Mobile-first CSS:</strong> base styles are for phones,
+                and min-width media queries add the tablet and desktop layouts.
+              </li>
+              <li>
+                <strong>Optimized images:</strong> WebP everywhere, with
+                transparency for the stickers, lazy loading below the fold, and
+                set dimensions so nothing jumps while the page loads.
+              </li>
+              <li>
+                <strong>Accessible by default:</strong> meaningful alt text,
+                visible focus rings, skip link, labelled navigation, and reduced
+                motion for anyone who prefers it.
+              </li>
+              <li>
+                <strong>Findable:</strong> descriptive titles and meta
+                descriptions, link-preview images, canonical URLs and structured
+                data for search engines.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ============ REFLECTION ============ -->
+        <section class="case__section reveal" aria-labelledby="learned-title">
+          <h2 class="case__h2" id="learned-title">What I learned</h2>
+          <div class="case__body">
+            <p>
+              Designing my own brand was harder than designing for a client,
+              because there was no brief to check my decisions against. I wanted
+              the site to tell my career-change story without saying "career
+              change" in big letters, so I let the design carry it: my name sits
+              in the middle of the page, surrounded by photo stickers of my nail
+              art, the dogs I've groomed, and me. Every one of those images had
+              to earn its place. The nail and dog stickers link straight to the
+              matching answer in my About section, so the decoration doubles as
+              navigation into my background.
+            </p>
+
+            <p>
+              My colour palette taught me the difference between a colour
+              looking right and a colour working. The soft pink that defines the
+              brand fails WCAG contrast as text on cream. Instead of dropping
+              it, I split it into two tokens. The light pink stays for
+              decoration like bullets, flowers, and quote marks. A deeper rose
+              (#B0385C, at least 5.2:1) handles every piece of accent text and
+              every focus ring. Setting up all colours as CSS variables from the
+              start also meant dark mode came down to swapping one set of
+              tokens. A small script in the <code>&lt;head&gt;</code> applies
+              the saved theme before the page paints, so it never flashes the
+              wrong mode.
+            </p>
+
+            <p>
+              Building mobile-first changed how I think about layout. I wrote
+              the base styles for phones and added the tablet and desktop
+              layouts with min-width queries. That forced me to decide what
+              mattered most on a small screen before adding anything else. The
+              bottom thumb navigation came out of that process: on a phone, a
+              top menu is the hardest thing to reach. The stickers were the
+              trickiest part to make responsive. Their positions and sizes are
+              all percentages of the hero, with a separate set of values for
+              phones, so they stay clear of the letters at every width.
+            </p>
+
+            <p>
+              I chose plain HTML, CSS and JavaScript with no framework or build
+              step. After working in React on Polar DB, I wanted to show I
+              understand what the browser gives you on its own. The FAQ uses
+              native <code>&lt;details&gt;</code> elements, so it works with a
+              keyboard and screen reader even without JavaScript. Images are
+              WebP with set dimensions so nothing jumps while the page loads,
+              and animations turn off for anyone who has asked their device for
+              reduced motion. The home page loads in about 240 KB.
+            </p>
+
+            <p>
+              Next, I will be adding new case studies as I finish projects,
+              starting with my capstone.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ NEXT ============ -->
+        <nav class="case__next" aria-label="More projects">
+          <a class="case__next-link" href="polar-db.html"
+            ><span>Next project</span>Polar DB
+            <span aria-hidden="true">→</span></a
+          >
+          <a class="btn btn--primary btn--cta" href="../index.html#projects"
+            >See all projects <span aria-hidden="true">→</span></a
+          >
+        </nav>
+      </article>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" id="contact">
+      <div class="footer__inner">
+        <div class="footer__lead">
+          <p class="footer__big">Let's make something <em>lovely</em>.</p>
+          <a class="footer__email" href="mailto:talia.irma_@live.com"
+            >talia.irma_@live.com</a
+          >
+        </div>
+
+        <div class="footer__cols">
+          <div>
+            <h2 class="footer__label">Contact</h2>
+            <ul>
+              <li><a href="mailto:talia.irma_@live.com">Email</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="footer__label">Elsewhere</h2>
+            <ul class="socials">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/talia-lhi-zhuang/"
+                  target="_blank"
+                  rel="me noopener"
+                  >LinkedIn<span class="visually-hidden">
+                    (opens in a new tab)</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/taliaairma"
+                  target="_blank"
+                  rel="me noopener"
+                  >GitHub<span class="visually-hidden">
+                    (opens in a new tab)</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer__base">
-      <p>© <span id="year">2026</span> Talia Zhuang</p>
-    </div>
-  </footer>
+      <div class="footer__base">
+        <p>© <span id="year">2026</span> Talia Zhuang</p>
+      </div>
+    </footer>
 
-  <!-- Floating "back to top" button: main.js shows it once you scroll down -->
-  <a class="to-top" href="#top" data-to-top>
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
-    <span class="visually-hidden">Back to top</span>
-  </a>
+    <!-- Floating "back to top" button: main.js shows it once you scroll down -->
+    <a class="to-top" href="#top" data-to-top>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" />
+      </svg>
+      <span class="visually-hidden">Back to top</span>
+    </a>
 
-  <script src="../js/main.js?v=3"></script>
-</body>
+    <script src="../js/main.js?v=5"></script>
+  </body>
 </html>

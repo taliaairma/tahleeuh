@@ -85,10 +85,10 @@
       (function () {
         var saved = null;
         try {
-          saved = localStorage.getItem("theme");
+          saved = localStorage.getItem('theme');
         } catch (e) {}
-        if (saved === "light" || saved === "dark") {
-          document.documentElement.setAttribute("data-theme", saved);
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
         }
       })();
     </script>
@@ -110,7 +110,7 @@
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
     /></noscript>
-    <link rel="stylesheet" href="css/styles.css?v=4" />
+    <link rel="stylesheet" href="css/styles.css?v=5" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -146,10 +146,7 @@
       </nav>
     </header>
 
-    <!-- ============ THUMB NAV (phones only) ============
-       Fixed to the bottom of the screen so every section is one thumb-tap away.
-       The header keeps the logo and theme toggle on phones, so this bar has its own
-       label ("Sections") and screen readers can tell the two navigations apart. -->
+    <!-- ============ THUMB NAV (phones only) ============ -->
     <nav class="thumb-nav" aria-label="Sections">
       <ul>
         <li>
@@ -227,19 +224,6 @@
             ><span aria-hidden="true">A</span>
           </h1>
 
-          <!--
-          STICKERS float in a ring around the name, never over it.
-          Each one is a link-ready <a>. The nail stickers link to #nail-art and the dog
-          stickers to #dog-grooming (FAQ answers in About, which open automatically). To link another, add an href, e.g.
-            <a class="sticker" href="#nail-art" ...>
-          and change the img alt to say where it goes ("See my nail art").
-          Until then it's just a picture: not clickable, not in the tab order.
-          Everything is a % of the hero stage, so stickers scale with the name on every screen.
-            Custom properties in each style="":
-            x / y / w     position + width on tablets and desktops
-            xs / ys / ws  position + width on phones and portrait tablets
-            r             tilt
-        -->
           <a
             class="sticker"
             style="
@@ -443,8 +427,6 @@
         </div>
 
         <div class="projects">
-          <!-- Duplicate an <article> to add a project. Replace the image, text, tags and links.
-             Thumbnails are 1200x750 (16:10) in assets/projects/. -->
           <article class="project reveal">
             <div class="project__media" style="--tint: var(--lilac)">
               <img
@@ -626,8 +608,6 @@
             </div>
           </article>
 
-          <!-- COMING SOON: when it is ready, swap the "Coming soon" media block for a thumbnail
-             (<img src="assets/projects/ecommerce.webp" ...>), update the text and add links. -->
           <article class="project project--soon reveal">
             <div
               class="project__media project__media--soon"
@@ -652,8 +632,6 @@
             </div>
           </article>
 
-          <!-- COMING SOON (client): swap in the business name, what they do and the tools,
-               then a thumbnail and links once the site launches. -->
           <article class="project project--soon reveal">
             <div
               class="project__media project__media--soon project__media--cocoa"
@@ -763,7 +741,6 @@
           </div>
         </div>
 
-        <!-- Update these chips as your coursework moves on -->
         <div class="learning reveal">
           <h3 class="learning__title">
             <span class="learning__dot" aria-hidden="true"></span>Currently
@@ -821,10 +798,6 @@
               >
             </p>
 
-            <!--
-            FAQ drop-downs. Each <details> opens and closes on its own (keyboard + screen reader friendly, no JS needed).
-            The ids let other links jump straight to an answer and open it, e.g. <a href="#nail-art">.
-          -->
             <div class="faq">
               <details class="faq__item" id="nail-art">
                 <summary class="faq__q">Where did you learn nail art?</summary>
@@ -868,7 +841,6 @@
               <details class="faq__item" id="fun-facts">
                 <summary class="faq__q">Even more fun facts about me</summary>
                 <div class="faq__a">
-                  <!-- Add or remove <li>s as you like. -->
                   <ul class="faq__list">
                     <li>I love a good brothy noodle bowl, on any day.</li>
                     <li>Dogs, cats, any animal will stop me on my walks.</li>
@@ -888,15 +860,7 @@
         </div>
       </section>
 
-      <!-- ============ TESTIMONIALS ============
-         Only use quotes you have permission for. Each circle shows the person's initials.
-         Add or remove a whole <figure class="quote"> to change how many there are.
-           · 3 or fewer: shown as a simple grid.
-           · 4 or more: automatically becomes a swipeable carousel with arrow buttons.
-         Put the strongest quote first; it's the one everyone sees.
-         To hide the whole section, add the word  hidden  to the <section> tag.
-         Photos (optional): replace a <span class="quote__avatar">?</span> with
-           <img class="quote__avatar" src="assets/people/name.webp" alt=""> -->
+      <!-- ============ TESTIMONIALS ============ -->
       <section
         class="section"
         id="kind-words"
@@ -1063,6 +1027,6 @@
       <span class="visually-hidden">Back to top</span>
     </a>
 
-    <script src="js/main.js?v=3"></script>
+    <script src="js/main.js?v=5"></script>
   </body>
 </html>
