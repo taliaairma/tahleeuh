@@ -1457,6 +1457,7 @@ body > .footer {
 .case__facts dd {
   margin: 4px 0 0;
   font-weight: 500;
+  overflow-wrap: anywhere; /* long web addresses wrap instead of being cut off */
 }
 
 /* Screenshots */
