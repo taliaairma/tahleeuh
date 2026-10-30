@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>The Sassy Spaw — Talia Zhuang</title>
+    <meta
+      name="description"
+      content="The Sassy Spaw case study: a team-built WordPress and WooCommerce site where a Richmond, BC grooming salon takes bookings online."
+    />
+
+    <link
+      rel="canonical"
+      href="https://tahleeuh.com/projects/the-sassy-spaw.html"
+    />
+
+    <!-- Icons -->
+    <link rel="icon" href="../assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="../assets/icons/favicon-32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png" />
+    <meta
+      name="theme-color"
+      content="#fff8f1"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#171214"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!-- Link previews (LinkedIn, Slack, iMessage, etc.) -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:site_name"
+      content="Talia Zhuang — Designer &amp; Developer"
+    />
+    <meta property="og:title" content="The Sassy Spaw — Talia Zhuang" />
+    <meta
+      property="og:description"
+      content="The Sassy Spaw case study: a team-built WordPress and WooCommerce site where a Richmond, BC grooming salon takes bookings online."
+    />
+    <meta
+      property="og:url"
+      content="https://tahleeuh.com/projects/the-sassy-spaw.html"
+    />
+    <meta
+      property="og:image"
+      content="https://tahleeuh.com/assets/og/the-sassy-spaw.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="The Sassy Spaw home page: Happy Pets, Happier Humans, with a smiling woman hugging a dog and a cat"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Breadcrumb trail for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tahleeuh.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://tahleeuh.com/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "The Sassy Spaw",
+            "item": "https://tahleeuh.com/projects/the-sassy-spaw.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Set the theme before paint so there's no flash of the wrong mode -->
+    <script>
+      (function () {
+        var saved = null;
+        try {
+          saved = localStorage.getItem('theme');
+        } catch (e) {}
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts load without blocking the first paint; text shows in a fallback font until they arrive -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+    /></noscript>
+    <link rel="stylesheet" href="../css/styles.css?v=6" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <a class="nav__logo" href="../index.html"
+          >talia<span aria-hidden="true">.</span></a
+        >
+        <ul class="nav__links">
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch to dark mode"
+        >
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ============ THUMB NAV (phones only) ============ -->
+    <nav class="thumb-nav" aria-label="Sections">
+      <ul>
+        <li>
+          <a href="../index.html#projects" aria-current="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="3.5" width="7" height="7" rx="2" />
+              <rect x="13.5" y="3.5" width="7" height="7" rx="2" />
+              <rect x="3.5" y="13.5" width="7" height="7" rx="2" />
+              <rect x="13.5" y="13.5" width="7" height="7" rx="2" />
+            </svg>
+            <span>Work</span></a
+          >
+        </li>
+        <li>
+          <a href="../index.html#skills">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2Z"
+              />
+            </svg>
+            <span>Skills</span></a
+          >
+        </li>
+        <li>
+          <a href="../index.html#about">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8.5" r="4" />
+              <path d="M4.5 20.5c1.2-3.9 4.1-6 7.5-6s6.3 2.1 7.5 6" />
+            </svg>
+            <span>About</span></a
+          >
+        </li>
+        <li>
+          <a href="#contact">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5.5" width="18" height="13" rx="3" />
+              <path d="m4 7.5 8 6 8-6" />
+            </svg>
+            <span>Contact</span></a
+          >
+        </li>
+        <li>
+          <button
+            type="button"
+            class="thumb-nav__theme"
+            data-theme-toggle
+            aria-label="Switch to dark mode"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.5" />
+              <path
+                d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"
+              />
+            </svg>
+            <span class="thumb-nav__theme-text" aria-hidden="true">Dark</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="main">
+      <article class="case" style="--tint: var(--pink); --tint-ink: #141111">
+        <!-- ============ INTRO ============ -->
+        <header class="case__hero" id="top">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html#projects">Projects</a></li>
+              <li><span aria-current="page">The Sassy Spaw</span></li>
+            </ol>
+          </nav>
+          <p class="section__kicker">Team Project · WooCommerce Site</p>
+          <h1 class="case__title">The Sassy Spaw</h1>
+          <p class="case__lede">
+            A booking-first website for a one-pet-at-a-time grooming salon in
+            Richmond, BC, built around its promise: "Humanity over vanity."
+          </p>
+
+          <div class="case__actions">
+            <a
+              class="btn btn--primary"
+              href="https://sassyspaw.bcitwebdeveloper.ca/"
+              target="_blank"
+              rel="noopener"
+              >Visit live site <span aria-hidden="true">↗</span
+              ><span class="visually-hidden"> (opens in a new tab)</span></a
+            >
+          </div>
+
+          <dl class="case__facts">
+            <div>
+              <dt>Team</dt>
+              <dd>Talia, Frances, Sara &amp; Jake</dd>
+            </div>
+            <div>
+              <dt>My role</dt>
+              <dd>Project management, content, SEO, client tutorial</dd>
+            </div>
+            <div>
+              <dt>Built with</dt>
+              <dd>WordPress, WooCommerce, ACF, Yoast SEO</dd>
+            </div>
+            <div>
+              <dt>Live at</dt>
+              <dd>sassyspaw.bcitwebdeveloper.ca</dd>
+            </div>
+          </dl>
+        </header>
+
+        <figure class="case__shot case__shot--wide reveal">
+          <div class="browser">
+            <div class="browser__bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <img
+              src="../assets/projects/the-sassy-spaw/home.webp"
+              alt="The Sassy Spaw home page: the headline Happy Pets, Happier Humans beside a photo of a smiling woman hugging a dog and a cat, with New paws? Start here and View services buttons"
+              width="1440"
+              height="900"
+            />
+          </div>
+          <figcaption>
+            The home page gives new clients a clear first step: "New paws? Start
+            here."
+          </figcaption>
+        </figure>
+
+        <!-- ============ OVERVIEW ============ -->
+        <section class="case__section reveal" aria-labelledby="overview-title">
+          <h2 class="case__h2" id="overview-title">Overview</h2>
+          <div class="case__body">
+            <p>
+              The Sassy Spaw is a boutique grooming salon in Richmond, BC that
+              grooms one pet at a time. Its promise is "Humanity over vanity": a
+              calm, unrushed groom matters more than a perfect coat.
+            </p>
+            <p>
+              The site had one goal: get a new client to book online, then bring
+              them back on the Spaw Schedule, the salon's prepaid plan for
+              regular grooms. We built it as a team of four on WordPress and
+              WooCommerce, with every service set up as a bookable product.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ MY ROLE ============ -->
+        <section class="case__section reveal" aria-labelledby="role-title">
+          <h2 class="case__h2" id="role-title">What I did</h2>
+          <div class="case__body">
+            <ul class="case__list">
+              <li>
+                <strong>Project management:</strong> kept four people and four
+                areas of work (design, templates, booking and content) organised
+                and on schedule.
+              </li>
+              <li>
+                <strong>Content:</strong> the site's copy, written in the
+                salon's warm, slightly sassy voice while staying clear about
+                services, prices and policies.
+              </li>
+              <li>
+                <strong>SEO:</strong> local-search page titles like "Pet
+                Grooming in Richmond, BC", a unique meta description on every
+                page, and Yoast SEO for canonical URLs, link previews,
+                breadcrumbs and the XML sitemap.
+              </li>
+              <li>
+                <strong>Client tutorial:</strong> a guide that shows the client
+                how to keep the site up to date on their own.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="case__pair reveal">
+          <figure class="case__shot">
+            <div class="browser">
+              <div class="browser__bar" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <img
+                src="../assets/projects/the-sassy-spaw/booking.webp"
+                alt="The Full Groom service page: a photo of a groomer clipping a Yorkie beside a Book this service form with a groomer menu, a calendar and a pet size menu"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              Every service books in one form: groomer, date, time, size and
+              add-ons.
+            </figcaption>
+          </figure>
+          <figure class="case__shot">
+            <div class="browser">
+              <div class="browser__bar" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <img
+                src="../assets/projects/the-sassy-spaw/faq.webp"
+                alt="The FAQ page: a sidebar of topics and a search box beside expandable questions such as How do I book a Spaw Day?"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              The FAQ groups answers by topic, with search.
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- ============ FEATURES ============ -->
+        <section class="case__section reveal" aria-labelledby="pages-title">
+          <h2 class="case__h2" id="pages-title">Inside the site</h2>
+          <div class="case__body">
+            <ul class="case__cards">
+              <li>
+                <h3>Booking</h3>
+                <p>
+                  Each groom is a WooCommerce product: choose a groomer, date
+                  and time, your pet's size and add-ons, then pay a 50% deposit.
+                </p>
+              </li>
+              <li>
+                <h3>Welcome Consultation</h3>
+                <p>
+                  Free, and required for every new pet, so they meet their
+                  groomer before the first groom.
+                </p>
+              </li>
+              <li>
+                <h3>Spaw Schedule</h3>
+                <p>
+                  A prepaid plan every 4, 6 or 8 weeks that saves on each visit.
+                  Members rebook with their Spaw Day code.
+                </p>
+              </li>
+              <li>
+                <h3>Our Team</h3>
+                <p>
+                  Profiles for five groomers, each with their own specialty, and
+                  you can pick your favourite when you book.
+                </p>
+              </li>
+              <li>
+                <h3>FAQ &amp; policies</h3>
+                <p>
+                  Answers grouped from booking to at-home care, with search,
+                  plus policies every client agrees to when booking.
+                </p>
+              </li>
+              <li>
+                <h3>Journal</h3>
+                <p>
+                  Pet-care posts, like why matted pets get shaved and paw care
+                  in rainy Vancouver winters.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ============ TEAM ============ -->
+        <section class="case__section reveal" aria-labelledby="team-title">
+          <h2 class="case__h2" id="team-title">How we worked</h2>
+          <div class="case__body">
+            <p>Each of us owned one part of the site:</p>
+            <ul class="case__list">
+              <li><strong>Frances</strong> led the design and front-end.</li>
+              <li>
+                <strong>Sara</strong> built the templates, ACF blocks and client
+                profiles.
+              </li>
+              <li>
+                <strong>Jake</strong> set up WooCommerce and the booking system.
+              </li>
+              <li>
+                <strong>I</strong> managed the project and handled the content,
+                SEO and client tutorial.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="case__pair case__pair--phone reveal">
+          <figure class="case__shot case__shot--phone">
+            <img
+              src="../assets/projects/the-sassy-spaw/home-mobile.webp"
+              alt="The Sassy Spaw home page on a phone, with the headline, both buttons and a five-star review stacked above the hero photo"
+              width="500"
+              height="1000"
+              loading="lazy"
+            />
+            <figcaption>The same booking path on a phone.</figcaption>
+          </figure>
+          <!-- ============ REFLECTION ============ -->
+          <section
+            class="case__section case__section--inline"
+            aria-labelledby="learned-title"
+          >
+            <h2 class="case__h2" id="learned-title">What I learned</h2>
+            <div class="case__body">
+              <p>
+                Managing a team of four showed me that most of the work happens
+                between the tasks. Design, templates, booking and content all
+                moved at the same time, so the hand-offs mattered as much as the
+                parts themselves.
+              </p>
+              <p>
+                Doing the content and the SEO together changed how I write.
+                Every page title and description had to say what the page is and
+                where the salon is, in a few words, and still sound like The
+                Sassy Spaw.
+              </p>
+              <p>
+                Writing the client tutorial was a good test of the whole site.
+                When a step was hard to explain, it usually meant the editing
+                experience could be simpler.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- ============ NEXT ============ -->
+        <nav class="case__next" aria-label="More projects">
+          <a class="case__next-link" href="polar-db.html"
+            ><span>Next project</span>Polar DB
+            <span aria-hidden="true">→</span></a
+          >
+          <a class="btn btn--primary btn--cta" href="../index.html#projects"
+            >See all projects <span aria-hidden="true">→</span></a
+          >
+        </nav>
+      </article>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" id="contact">
+      <div class="footer__inner">
+        <div class="footer__lead">
+          <p class="footer__big">Let's make something <em>lovely</em>.</p>
+          <a class="footer__email" href="mailto:talia.irma_@live.com"
+            >talia.irma_@live.com</a
+          >
+        </div>
+
+        <div class="footer__cols">
+          <div>
+            <h2 class="footer__label">Contact</h2>
+            <ul>
+              <li><a href="mailto:talia.irma_@live.com">Email</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="footer__label">Elsewhere</h2>
+            <ul class="socials">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/talia-lhi-zhuang/"
+                  target="_blank"
+                  rel="me noopener"
+                  >LinkedIn<span class="visually-hidden">
+                    (opens in a new tab)</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/taliaairma"
+                  target="_blank"
+                  rel="me noopener"
+                  >GitHub<span class="visually-hidden">
+                    (opens in a new tab)</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__base">
+        <p>© <span id="year">2026</span> Talia Zhuang</p>
+      </div>
+    </footer>
+
+    <!-- Floating "back to top" button: main.js shows it once you scroll down -->
+    <a class="to-top" href="#top" data-to-top>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" />
+      </svg>
+      <span class="visually-hidden">Back to top</span>
+    </a>
+
+    <script src="../js/main.js?v=6"></script>
+  </body>
+</html>

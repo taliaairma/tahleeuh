@@ -110,7 +110,7 @@
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
     /></noscript>
-    <link rel="stylesheet" href="css/styles.css?v=5" />
+    <link rel="stylesheet" href="css/styles.css?v=6" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -608,27 +608,50 @@
             </div>
           </article>
 
-          <article class="project project--soon reveal">
-            <div
-              class="project__media project__media--soon"
-              style="--tint: var(--pink)"
-              aria-hidden="true"
-            >
-              <span class="soon-badge">Coming soon <span>✿</span></span>
+          <article class="project reveal">
+            <div class="project__media" style="--tint: var(--pink)">
+              <img
+                src="assets/projects/the-sassy-spaw.webp"
+                srcset="
+                  assets/projects/the-sassy-spaw-480.webp  480w,
+                  assets/projects/the-sassy-spaw-800.webp  800w,
+                  assets/projects/the-sassy-spaw.webp     1200w
+                "
+                sizes="(min-width: 960px) 590px, 100vw"
+                alt="The Sassy Spaw home page: Happy Pets, Happier Humans, beside a smiling woman hugging a dog and a cat"
+                width="1200"
+                height="750"
+                loading="lazy"
+              />
             </div>
             <div class="project__body">
-              <p class="project__meta">eCommerce · WooCommerce · In progress</p>
+              <p class="project__meta">Team Project · WooCommerce Site</p>
               <h3 class="project__title">The Sassy Spaw</h3>
               <p class="project__desc">
-                A WooCommerce store on WordPress, just getting started for my
-                Online Stores course. It will include product bundles, add-on
-                options, subscriptions, shipping zones and a secure checkout.
+                A booking-first site for a one-pet-at-a-time grooming salon in
+                Richmond, BC: book online, then come back on the Spaw Schedule.
+                I managed the project and handled the content, SEO and client
+                tutorial.
               </p>
               <ul class="tags">
-                <li>WooCommerce</li>
                 <li>WordPress</li>
-                <li>PHP</li>
+                <li>WooCommerce</li>
+                <li>ACF</li>
+                <li>Yoast SEO</li>
               </ul>
+              <div class="project__links">
+                <a href="projects/the-sassy-spaw.html" class="link-arrow"
+                  >Case study <span aria-hidden="true">→</span></a
+                >
+                <a
+                  href="https://sassyspaw.bcitwebdeveloper.ca/"
+                  class="link-arrow"
+                  target="_blank"
+                  rel="noopener"
+                  >Live site <span aria-hidden="true">↗</span
+                  ><span class="visually-hidden"> (opens in a new tab)</span></a
+                >
+              </div>
             </div>
           </article>
 
@@ -1027,6 +1050,6 @@
       <span class="visually-hidden">Back to top</span>
     </a>
 
-    <script src="js/main.js?v=5"></script>
+    <script src="js/main.js?v=6"></script>
   </body>
 </html>
